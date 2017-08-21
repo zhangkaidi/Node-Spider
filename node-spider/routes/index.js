@@ -27,7 +27,6 @@ router.get('/', function (req, res) {
                 var index = nextPageUrl.lastIndexOf("=");
                 var nextPageIndex = nextPageUrl.substring(index + 1, nextPageUrl.length);//下一页的nextPageIndex;
                 var str = "http://s.wanfangdata.com.cn/Paper.aspx?q=" + search + "&f=top&p=" + nextPageIndex;//拼接下一页的url；
-                getTitleAndPageIndex($, pageIndex, pageConent);
                 saveHtml(pageSum, needPage, search, nextPageIndex, getTitleAndPageIndex($, pageIndex, pageConent));
                 goNextPage(str, needPage, pageSum);
             })
