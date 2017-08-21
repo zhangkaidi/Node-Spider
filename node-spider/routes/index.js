@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
     start(url);//主函数，开启;
     function start(url) {
         http.get(url, function (res) {
-            let html = "";
+            var html = "";
             res.setEncoding('utf-8');
             res.on('data', function (chunk) {
                 html += chunk;
