@@ -5,7 +5,8 @@ var http = require('http');
 var router = express.Router();
 
 var i = 0;//默认页码；
-var search = 'cad';//默认检索cad;
+//var search = 'cad';//默认检索cad;
+var search = encodeURI('石墨烯');
 var needPage = 30;//检索页码；
 var url = "http://s.wanfangdata.com.cn/Paper.aspx?q=" + search + "&f=top&p=1";//默认url;
 router.get('/', function (req, res) {
@@ -19,7 +20,7 @@ router.get('/', function (req, res) {
             })
             res.on('end', function () {
                 var $ = cheerio.load(html);//当前文章html;
-                var search = $('#headerecho').val();//检索词
+                var searchVal = $('#headerecho').val();//检索词
                 var pageSum = $('.page_link').text().split('/')[1];//总页数
                 var pageConent = "";//pageIndex:当前文章title和对应的title的索引；
                 var pageIndex = "";//当前页面title对应的索引；
@@ -27,7 +28,7 @@ router.get('/', function (req, res) {
                 var index = nextPageUrl.lastIndexOf("=");
                 var nextPageIndex = nextPageUrl.substring(index + 1, nextPageUrl.length);//下一页的nextPageIndex;
                 var str = "http://s.wanfangdata.com.cn/Paper.aspx?q=" + search + "&f=top&p=" + nextPageIndex;//拼接下一页的url；
-                saveHtml(pageSum, needPage, search, nextPageIndex, getTitleAndPageIndex($, pageIndex, pageConent));
+                saveHtml(pageSum, needPage, searchVal, nextPageIndex, getTitleAndPageIndex($, pageIndex, pageConent));
                 goNextPage(str, needPage, pageSum);
             })
         }).on('error', function (e) {
@@ -41,7 +42,7 @@ router.get('/', function (req, res) {
         })
         return pageConent;
     }//每一页的title和对应的pageIndex;
-    function saveHtml(pageSum, needPage, search, nextPageIndex, pageConent) {
+    function saveHtml(pageSum, needPage, searchVal, nextPageIndex, pageConent) {
         if (nextPageIndex == 2) {
             res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         }
@@ -53,7 +54,7 @@ router.get('/', function (req, res) {
                 if (i == 1) {
                     console.log('爬取开始！')
                 }
-                console.log('检索词：' + search + ' 总共：' + pageSum + '页 实际爬取：' + needPage + '页 正在爬取：' + i + '页');
+                console.log('检索词：' + searchVal + ' 总共：' + pageSum + '页 实际爬取：' + needPage + '页 正在爬取：' + i + '页');
                 if (pageSum == i || needPage == i) {
                     console.log('爬取结束！')
                 }

@@ -1,6 +1,7 @@
 {
   "globalDependencies": {
     "body-parser": "registry:dt/body-parser#0.0.0+20160317120654",
+    "cheerio": "registry:dt/cheerio#0.22.0+20170310073758",
     "cookie-parser": "registry:dt/cookie-parser#1.3.4+20160316155526",
     "debug": "registry:dt/debug#0.0.0+20160317120654",
     "express": "registry:dt/express#4.0.0+20160317120654",
