@@ -1,2 +1,2 @@
 # node-spider
-node爬虫（万方数据文章标题）
+node爬虫（文章标题）
