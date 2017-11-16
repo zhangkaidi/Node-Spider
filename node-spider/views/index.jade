@@ -1,5 +1,19 @@
 ﻿extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container
+      h1(class="spider-h1")= title
+      ul
+          li
+            input(type="text",class="search-words" placeholder="请输入检索词")
+            label 例如：cad
+          li
+            input(type="text",class="search-num" placeholder="请输入检索页数")
+            label 例如：12
+          li
+            button(class="search" data-url="/spider") 检索
+          li
+             a(class="download" href="javascript:;" data-href="../data/data.text"  )下载
+          li
+            p 注：小测试(www.wanfangdata.com.cn)
+        img(src="./img/run.jpg" class="run")

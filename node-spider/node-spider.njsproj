@@ -31,10 +31,29 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\js\index.js" />
+    <Compile Include="public\js\jquery-1.12.4.min.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="bin\www" />
-    <Content Include="data\data.text" />
+    <Compile Include="routes\spider.js" />
+    <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <SubType>Content</SubType>
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+    <Content Include="public\css\index.css" />
+    <Content Include="public\css\index.min.css">
+      <SubType>Content</SubType>
+      <DependentUpon>public\css\index.css</DependentUpon>
+    </Content>
+    <Content Include="public\data\data.text" />
     <Content Include="package.json" />
+    <Content Include="public\css\index.less" />
+    <Content Include="public\img\1.png" />
+    <Content Include="public\img\2.png" />
+    <Content Include="public\img\3.png" />
+    <Content Include="public\img\4.png" />
+    <Content Include="public\img\run.jpg" />
     <Content Include="README.md" />
     <Content Include="typings.json" />
     <Content Include="views\index.jade" />
@@ -43,8 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
-    <Folder Include="data\" />
+    <Folder Include="public\data\" />
     <Folder Include="public\" />
+    <Folder Include="public\js\" />
+    <Folder Include="public\css\" />
+    <Folder Include="public\img\" />
     <Folder Include="routes\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
