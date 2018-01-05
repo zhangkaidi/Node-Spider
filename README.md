@@ -1,28 +1,38 @@
-﻿## 爬虫小实验
-### 一、本地运行
+## 一、爬虫小实验（文章标题 || 王者荣耀头像）
+### 1、本地运行
 * git clone 项目地址
-* cd node-spider
+* cd node-spider || node-stream
 * npm install
-* node app.js
+* node app.js || index.js
 
-### 二、技术
-1.  cheerio
-2.  node( http.get(options[, callback]) )
+### 2、技术
+1. cheerio
+2. node( http.get(options[, callback]) )
+3. stream 
 
-### 三、UI
-1. 页面UI
+### 3、UI
+> 文章标题
+ 
+* 页面UI
 
 ![](node-spider/public/img/1.png)
 
-2. 爬取数据
+*  爬取数据
 
 ![](node-spider/public/img/2.png)
 
-3. 日志
+*  日志
 
 ![](node-spider/public/img/3.png)
 
-4. 数据下载
+*  数据下载
 
 ![](node-spider/public/img/4.png)
+
+> 王者荣耀头像
+
+![](node-stream/1.png)
+
+
+
 
