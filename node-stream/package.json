@@ -1,0 +1,14 @@
+{
+  "name": "imgs",
+  "version": "1.0.0",
+  "description": "streamImgs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cady",
+  "license": "ISC",
+  "devDependencies": {
+    "request": "^2.83.0"
+  }
+}
