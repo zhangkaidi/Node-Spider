@@ -33,6 +33,15 @@
 
 ![](node-stream/1.png)
 
+## 二、nodemailer
+
+> 邮件发送
+
+### 1、本地运行
+* git clone 项目地址
+* cd node-email 
+* npm install
+* node app.js
 
 
 
